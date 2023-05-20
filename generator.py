@@ -51,5 +51,5 @@ if __name__ == "__main__":
         ssids = DEFAULT_SSIDS
     
     for x in range(0, ssids):
-        print(requests.get(URL + "/run?cmd=add ssid \"Pfizer Chip ID " + getPesel()+"\" -f -cl 1 -wpa"))
+        print(x, requests.get(URL + "/run?cmd=add ssid \"Pfizer Chip ID " + getPesel()+"\" -f -cl 1 -wpa"))
 
