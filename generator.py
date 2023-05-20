@@ -1,8 +1,9 @@
 import requests
 import random
+import argparse
 
 URL = "http://192.168.4.1"
-APS = 10
+DEFAULT_SSIDS = 50
 
 def getControlNum(pesel):
     controlShit = [1,3,7,9,1,3,7,9,1,3]
@@ -41,5 +42,14 @@ def getPesel():
     
 
 if __name__ == "__main__":
-    for x in range(0, APS):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--ssids", type=int)
+    
+    args = parser.parse_args()
+    ssids = args.ssids
+    if ssids == None:
+        ssids = DEFAULT_SSIDS
+    
+    for x in range(0, ssids):
         print(requests.get(URL + "/run?cmd=add ssid \"Phizer Chip ID " + getPesel()+"\" -f -cl 1 -wpa"))
+
