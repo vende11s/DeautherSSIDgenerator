@@ -3,7 +3,7 @@ import random
 import argparse
 
 URL = "http://192.168.4.1"
-DEFAULT_SSIDS = 50
+DEFAULT_SSIDS = 60
 
 def getControlNum(pesel):
     controlShit = [1,3,7,9,1,3,7,9,1,3]
